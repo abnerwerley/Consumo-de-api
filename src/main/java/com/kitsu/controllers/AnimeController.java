@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.kitsu.models.Anime;
 import com.kitsu.models.Anime.Attributes;
 
 @RestController
@@ -32,4 +33,16 @@ public class AnimeController {
 		return entity.getBody();
 
 	}
+
+	@GetMapping("/listarTodos")
+	public Anime[] pegarTodos(){
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		ResponseEntity<Anime[]> response = restTemplate.getForEntity("https://kitsu.io/api/edge/anime", Anime[].class);
+		Anime[] animes = response.getBody();
+
+		return animes;
+	}
+
 }
