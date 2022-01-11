@@ -239,4 +239,6 @@ public class Anime {
 		private Data data;
 	}
 
+	
+	
 }

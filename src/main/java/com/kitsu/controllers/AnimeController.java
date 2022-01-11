@@ -22,27 +22,40 @@ public class AnimeController {
 	@GetMapping("/{id}")
 	public Attributes getById(@PathVariable String id) {
 
+		System.out.println("Chegou aqui");
 		RestTemplate restTemplate = new RestTemplate();
 		StringBuilder stringBuilder = new StringBuilder();
-		String urlFinal = stringBuilder.append(urlApi).append(id).toString();
+		String urlFinal = stringBuilder.append(urlApi).append("/anime").append("/").append(id).toString();
 
+		System.out.println(urlFinal);
+		
 		ResponseEntity<Attributes> entity = restTemplate.getForEntity(urlFinal, Attributes.class);
-
-		System.out.println(entity.getBody());
-
-		return entity.getBody();
+		
+		Attributes body = entity.getBody();
+		System.out.println(body);
+		
+		//HttpStatus statusCode = entity.getStatusCode();
+		//System.out.println(statusCode);
+		
+		return body;
 
 	}
 
 	@GetMapping("/listarTodos")
 	public Anime[] pegarTodos(){
 
+		System.out.println("Entrou aqui");
 		RestTemplate restTemplate = new RestTemplate();
 
 		ResponseEntity<Anime[]> response = restTemplate.getForEntity("https://kitsu.io/api/edge/anime", Anime[].class);
 		Anime[] animes = response.getBody();
 
+		System.out.println(animes);
 		return animes;
 	}
+	
+	
+	
+	
 
 }
