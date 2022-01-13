@@ -19,7 +19,7 @@ Desafio técnico para processo de nivelamento de conhecimento técnico em desenv
 - Fazer o git clone do url do repositório pro seu workspace (Ou baixar o zip dele).
 - Importar o projeto Maven com o endereço do local onde está.
 - Selecionar o Projeto na Sua IDE e Rodar como Java Application
-- Instrução para os endpoints(Todos são métodos GET):
+- Instrução para os endpoints(Todos são métodos GET, mas no momento não estão funcionando):
    * Anime
      - Busca por id : localhost:8082/anime/busca/id
      - Listar animes: localhost:8082/anime/listarTodos
