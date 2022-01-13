@@ -21,18 +21,19 @@ Desafio técnico para processo de nivelamento de conhecimento técnico em desenv
 - Selecionar o Projeto na Sua IDE e Rodar como Java Application
 - Instrução para os endpoints(Todos são métodos GET, mas no momento não estão funcionando):
    * Anime
-     - Busca por id : localhost:8082/anime/busca/id
-     - Listar animes: localhost:8082/anime/listarTodos
-     - Buscar por filtros:  localhost:8082/anime/busca/filtroQueQuiser
-     - TrendingAnimes :  localhost:8082/anime/trending
-     - Buscar Episoódios:  localhost:8082/anime/episode/nomeDoAnime
+     - Busca por id :<br>
+       localhost:8082/anime/busca/id
+     - Listar animes: <br>localhost:8082/anime/listarTodos
+     - Buscar por filtros:  <br>localhost:8082/anime/busca/filtroQueQuiser
+     - TrendingAnimes :  <br>localhost:8082/anime/trending
+     - Buscar Episoódios:  <br>localhost:8082/anime/episode/nomeDoAnime
      
    * Manga
-     - Busca por id : localhost:8082/manga/busca/id
-     - Listar animes: localhost:8082/manga/listarTodos
-     - Buscar por filtros:  localhost:8082/manga/busca/filtroQueQuiser
-     - TrendingMangas :  localhost:8082/manga/trending
-     - Buscar Capítulos:  localhost:8082/manga/chapter/nomeDoAnime
+     - Busca por id : <br>localhost:8082/manga/busca/id
+     - Listar animes: <br>localhost:8082/manga/listarTodos
+     - Buscar por filtros:  <br>localhost:8082/manga/busca/filtroQueQuiser
+     - TrendingMangas :  <br>localhost:8082/manga/trending
+     - Buscar Capítulos:  <br>localhost:8082/manga/chapter/nomeDoAnime
     
 # Prótotipo de banco de dados:
 https://drive.google.com/drive/folders/1VW0icPsb432XV0bmfn1yi-JomjTtuMQi?usp=sharing
