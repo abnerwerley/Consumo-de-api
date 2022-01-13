@@ -34,3 +34,5 @@ Desafio técnico para processo de nivelamento de conhecimento técnico em desenv
      - TrendingMangas :  localhost:8082/manga/trending
      - Buscar Capítulos:  localhost:8082/manga/chapter/nomeDoAnime
     
+# Prótotipo de banco de dados:
+https://drive.google.com/drive/folders/1VW0icPsb432XV0bmfn1yi-JomjTtuMQi?usp=sharing
