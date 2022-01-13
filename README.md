@@ -14,7 +14,7 @@ Desafio técnico para processo de nivelamento de conhecimento técnico em desenv
 # Como fazer o código rodar:
 
 - Requisitos:
- - Ter uma IDE para rodar o projeto.
+ - Ter uma JRE se quiser somente rodar o projeto.
  - Ter o postman ou insomnia baixado
 - Fazer o git clone do url do repositório pro seu workspace (Ou baixar o zip dele).
 - Importar o projeto Maven com o endereço do local onde está.
