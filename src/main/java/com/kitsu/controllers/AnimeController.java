@@ -1,28 +1,25 @@
 package com.kitsu.controllers;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.kitsu.models.Anime;
 import com.kitsu.models.Anime.Attributes;
 import com.kitsu.models.Anime.Episodes;
+import com.kitsu.services.AnimeService;
+
 
 @RestController
 @RequestMapping("/anime")
 public class AnimeController {
 
-	@Value("${url.api}") // Responsável por ir na application.properties e pegar as variáveis de
-							// ambiente.
-	private String urlApi;
-
-	RestTemplate restTemplate = new RestTemplate();
-	StringBuilder stringBuilder = new StringBuilder();
+	private @Autowired AnimeService animeService;
 	
-	@GetMapping("/busca/{id}")
+	@GetMapping("/{id}")
 	public Attributes getById(@PathVariable String id) {
 		return null;
 	}
@@ -33,8 +30,11 @@ public class AnimeController {
 	}
 	
 	@GetMapping("/busca/{texto}")
-	public Attributes getAnimePorTexto(@PathVariable String texto) {
-		return null;
+	public ResponseEntity<Anime> getAnimePorTexto(@PathVariable String texto) {
+		
+		Anime animeDoTexto = this.animeService.pesquisaPorFiltro(texto);
+		
+		return ResponseEntity.ok(animeDoTexto);
 	}
 	
 	@GetMapping("/trending")
