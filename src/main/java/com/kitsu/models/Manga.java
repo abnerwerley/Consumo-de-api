@@ -6,10 +6,12 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonProperty;
 //import com.fasterxml.jackson.databind.ObjectMapper; // version 2.11.1
 // import com.fasterxml.jackson.annotation.JsonProperty; // version 2.11.1
-	
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Manga {
 
 /* ObjectMapper om = new ObjectMapper();
