@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kitsu.models.AnimeData;
-import com.kitsu.models.AnimeEpisodes;
+//import com.kitsu.models.EpisodeData;
 import com.kitsu.services.AnimeService;
 
 @RestController
@@ -45,9 +45,15 @@ public class AnimeController {
 		return ResponseEntity.ok(animesPopulares);
 	}
 
-	@GetMapping("/episode/{anime}")
-	public AnimeEpisodes getEpisodePorAnime(@PathVariable String anime) {
-		return null;
+	/*
+	@GetMapping("/episodes/{id}")
+	public ResponseEntity<List<EpisodeData>> getEpisodePorAnime(@PathVariable String id) {
+		
+		List<EpisodeData> episodios = this.animeService.pesquisaEpisodio(id);
+		
+		return ResponseEntity.ok(episodios);
 	}
+	
+	*/
 
 }

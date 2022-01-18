@@ -9,6 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.kitsu.models.AnimeData;
 import com.kitsu.models.AnimeResponse;
+//import com.kitsu.models.EpisodeData;
 
 import reactor.core.publisher.Mono;
 
@@ -40,6 +41,32 @@ public class AnimeService {
 
 		return response.getData();
 	}
+	
+	public List<AnimeData> pegarTodosAnimes() {
+		Mono<AnimeResponse> monoAnime = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/anime")
+				.retrieve()
+				.bodyToMono(AnimeResponse.class);
+
+		AnimeResponse response = monoAnime.block();
+
+		return response.getData();
+	}
+	
+	/*
+	public List<EpisodeData> pesquisaEpisodio(String id) {
+		Mono<AnimeResponse> monoAnime = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/episodes/{id}", id)
+				.retrieve()
+				.bodyToMono(AnimeResponse.class);
+
+		AnimeResponse response = monoAnime.block();
+
+		return response.getEpisode();
+	}
+	*/
 	
 }
 
