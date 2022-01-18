@@ -40,8 +40,11 @@ public class AnimeController {
 	
 	
 	@GetMapping("/trending")
-	public AnimeData[] TrendingAnimes(){
-		return null;
+	public ResponseEntity<List<AnimeData>> TrendingAnimes(){
+		
+		List<AnimeData> animesPopulares = this.animeService.pesquisaPorRanking();
+		
+		return ResponseEntity.ok(animesPopulares);
 	}
 	
 	

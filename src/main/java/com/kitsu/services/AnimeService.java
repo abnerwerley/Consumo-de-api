@@ -28,5 +28,18 @@ public class AnimeService {
 
 		return response.getData();
 	}
+	
+	public List<AnimeData> pesquisaPorRanking() {
+		Mono<AnimeResponse> monoAnime = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/anime?sort=popularityRank")
+				.retrieve()
+				.bodyToMono(AnimeResponse.class);
+
+		AnimeResponse response = monoAnime.block();
+
+		return response.getData();
+	}
+	
 }
 
