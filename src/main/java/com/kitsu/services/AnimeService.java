@@ -5,7 +5,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.kitsu.models.AnimeCustom;
+import com.kitsu.models.AnimeData;
 import com.kitsu.models.AnimeResponse;
 
 import reactor.core.publisher.Mono;
@@ -15,7 +15,7 @@ public class AnimeService {
 
 	private @Autowired WebClient webClientKitsu;
 	
-	public AnimeCustom pesquisaPorFiltro(String texto) {
+	public AnimeData pesquisaPorFiltro(String texto) {
 		Mono<AnimeResponse> monoAnime = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/anime?filter[text]={texto}", texto)
@@ -24,7 +24,6 @@ public class AnimeService {
 
 		AnimeResponse response = monoAnime.block();
 
-		System.out.println(response);
 		return response.getData().get(0);
 	}
 }

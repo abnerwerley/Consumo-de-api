@@ -4,13 +4,13 @@ import java.util.List;
 
 public class AnimeResponse {
 
-	private List<AnimeCustom> data;
+	private List<AnimeData> data;
 
-	public List<AnimeCustom> getData() {
+	public List<AnimeData> getData() {
 		return data;
 	}
 
-	public void setData(List<AnimeCustom> data) {
+	public void setData(List<AnimeData> data) {
 		this.data = data;
 	}
 }
