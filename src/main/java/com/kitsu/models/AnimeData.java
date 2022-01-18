@@ -14,6 +14,7 @@ public class AnimeData {
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getType() {
 		return type;
 	}

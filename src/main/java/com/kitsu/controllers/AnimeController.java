@@ -13,41 +13,38 @@ import com.kitsu.models.AnimeData;
 import com.kitsu.models.AnimeEpisodes;
 import com.kitsu.services.AnimeService;
 
-
 @RestController
 @RequestMapping("/anime")
 public class AnimeController {
 
 	private @Autowired AnimeService animeService;
-	
+
 	@GetMapping("/busca/{texto}")
 	public ResponseEntity<List<AnimeData>> getAnimePorTexto(@PathVariable String texto) {
-		
+
 		List<AnimeData> animesDoTexto = this.animeService.pesquisaPorFiltro(texto);
-		
+
 		return ResponseEntity.ok(animesDoTexto);
 	}
-	
+
 	@GetMapping("/{id}")
 	public ResponseEntity<AnimeData> getById(@PathVariable String id) {
 		return null;
 	}
 
 	@GetMapping("/listarTodos")
-	public AnimeData[] pegarTodos(){
+	public AnimeData[] pegarTodos() {
 		return null;
 	}
-	
-	
+
 	@GetMapping("/trending")
-	public ResponseEntity<List<AnimeData>> TrendingAnimes(){
-		
+	public ResponseEntity<List<AnimeData>> TrendingAnimes() {
+
 		List<AnimeData> animesPopulares = this.animeService.pesquisaPorRanking();
-		
+
 		return ResponseEntity.ok(animesPopulares);
 	}
-	
-	
+
 	@GetMapping("/episode/{anime}")
 	public AnimeEpisodes getEpisodePorAnime(@PathVariable String anime) {
 		return null;
