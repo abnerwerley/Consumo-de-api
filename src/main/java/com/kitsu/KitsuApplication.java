@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
@@ -14,7 +13,8 @@ public class KitsuApplication {
 	public WebClient webCientKitsu(WebClient.Builder builder) {
 		return builder
 			.baseUrl("https://kitsu.io/api/edge")
-			.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+			.defaultHeader(HttpHeaders.CONTENT_TYPE, "application/vnd.api+json")
+			.defaultHeader(HttpHeaders.ACCEPT, "application/vnd.api+json")
 			.build();
 	}
 	
