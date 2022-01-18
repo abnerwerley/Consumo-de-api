@@ -1,5 +1,7 @@
 package com.kitsu.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,11 +21,11 @@ public class AnimeController {
 	private @Autowired AnimeService animeService;
 	
 	@GetMapping("/busca/{texto}")
-	public ResponseEntity<AnimeData> getAnimePorTexto(@PathVariable String texto) {
+	public ResponseEntity<List<AnimeData>> getAnimePorTexto(@PathVariable String texto) {
 		
-		AnimeData animeDoTexto = this.animeService.pesquisaPorFiltro(texto);
+		List<AnimeData> animesDoTexto = this.animeService.pesquisaPorFiltro(texto);
 		
-		return ResponseEntity.ok(animeDoTexto);
+		return ResponseEntity.ok(animesDoTexto);
 	}
 	
 	@GetMapping("/{id}")

@@ -1,5 +1,7 @@
 package com.kitsu.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -15,7 +17,7 @@ public class AnimeService {
 
 	private @Autowired WebClient webClientKitsu;
 	
-	public AnimeData pesquisaPorFiltro(String texto) {
+	public List<AnimeData> pesquisaPorFiltro(String texto) {
 		Mono<AnimeResponse> monoAnime = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/anime?filter[text]={texto}", texto)
@@ -24,7 +26,7 @@ public class AnimeService {
 
 		AnimeResponse response = monoAnime.block();
 
-		return response.getData().get(0);
+		return response.getData();
 	}
 }
 
