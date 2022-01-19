@@ -1,6 +1,3 @@
-# desafio-kitsu-backend
-Desafio técnico para processo de nivelamento de conhecimento técnico em desenvolvimento de software.
-
 # Como fiz:
 <h3>Criação do projeto:</h3>
 
