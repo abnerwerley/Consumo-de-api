@@ -31,13 +31,10 @@
 # Como fazer o código rodar:
 
 Requisitos:
- - Ter uma JRE se quiser somente rodar o projeto.
+ - Ter um navegador
 
 Passos
- - Fazer o git clone do url do repositório pro seu workspace (Ou baixar o zip dele).
- - Importar o projeto Maven na IDE e selecionar o endereço do local onde baixou.
- - Selecionar o Projeto na Sua IDE e Rodar como Java Application
- - Entrar no http://localhost:8082/swagger-ui/ pelo seu navegador
+ - Entrar em https://challengekitsu.herokuapp.com/swagger-ui/#/ pelo seu navegador
  - Testar os endpoints e passar os parâmetros quando necessário.
     
 # Prótotipo de banco de dados:
