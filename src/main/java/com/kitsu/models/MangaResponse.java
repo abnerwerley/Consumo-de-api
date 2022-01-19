@@ -2,7 +2,7 @@ package com.kitsu.models;
 
 import java.util.List;
 
-public class MangaResponse extends MangaData{
+public class MangaResponse{
 
 	private List<MangaData> data;
 
