@@ -20,7 +20,7 @@ public class AnimeController {
 	private @Autowired AnimeService animeService;
 
 	@GetMapping("/busca/{texto}")
-	public ResponseEntity<List<AnimeData>> getAnimePorTexto(@PathVariable String texto) {
+	public ResponseEntity<List<AnimeData>> getAnimesPorTexto(@PathVariable String texto) {
 
 		List<AnimeData> animesDoTexto = this.animeService.pesquisaPorFiltro(texto);
 
@@ -35,7 +35,7 @@ public class AnimeController {
 	*/
 
 	@GetMapping("/listarTodos")
-	public ResponseEntity<List<AnimeData>> pegarTodos() {
+	public ResponseEntity<List<AnimeData>> pegarTodosAnimes() {
 		List<AnimeData> todosAnimes = this.animeService.pegarTodosAnimes();
 		
 		return ResponseEntity.ok(todosAnimes);
