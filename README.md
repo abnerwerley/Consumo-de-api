@@ -13,27 +13,15 @@ Desafio técnico para processo de nivelamento de conhecimento técnico em desenv
 
 # Como fazer o código rodar:
 
-- Requisitos:
+Requisitos:
  - Ter uma JRE se quiser somente rodar o projeto.
- - Ter o postman ou insomnia baixado
-- Fazer o git clone do url do repositório pro seu workspace (Ou baixar o zip dele).
-- Importar o projeto Maven com o endereço do local onde está.
-- Selecionar o Projeto na Sua IDE e Rodar como Java Application
-- Instrução para os endpoints(Todos são métodos GET, mas no momento não estão funcionando):
-   * Anime
-     - Busca por id :<br>
-       localhost:8082/anime/busca/id
-     - Listar animes: <br>localhost:8082/anime/listarTodos
-     - Buscar por filtros:  <br>localhost:8082/anime/busca/filtroQueQuiser
-     - TrendingAnimes :  <br>localhost:8082/anime/trending
-     - Buscar Episoódios:  <br>localhost:8082/anime/episode/nomeDoAnime
-     
-   * Manga
-     - Busca por id : <br>localhost:8082/manga/busca/id
-     - Listar animes: <br>localhost:8082/manga/listarTodos
-     - Buscar por filtros:  <br>localhost:8082/manga/busca/filtroQueQuiser
-     - TrendingMangas :  <br>localhost:8082/manga/trending
-     - Buscar Capítulos:  <br>localhost:8082/manga/chapter/nomeDoAnime
+
+Passos
+ - Fazer o git clone do url do repositório pro seu workspace (Ou baixar o zip dele).
+ - Importar o projeto Maven na IDE e selecionar o endereço do local onde baixou.
+ - Selecionar o Projeto na Sua IDE e Rodar como Java Application
+ - Entrar no http://localhost:8082/swagger-ui/ pelo seu navegador
+ - Testar os endpoints e passar os parâmetros quando necessário.
     
 # Prótotipo de banco de dados:
 https://drive.google.com/drive/folders/1VW0icPsb432XV0bmfn1yi-JomjTtuMQi?usp=sharing
