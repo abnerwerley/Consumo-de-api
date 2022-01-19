@@ -2,7 +2,7 @@ package com.kitsu.models;
 
 import java.util.List;
 
-public class AnimeResponse {
+public class AnimeResponse extends AnimeData{
 
 	private List<AnimeData> data;
 	
