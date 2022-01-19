@@ -18,16 +18,6 @@ public class MangaController {
 
 	@Autowired
 	private MangaService mangaService;
-	
-	@GetMapping("/{id}")
-	public ResponseEntity<MangaData> getMangaById(@PathVariable String id) {
-		return null;
-	}
-
-	@GetMapping("/listarTodos")
-	public ResponseEntity<List<MangaData>> getAllMangas() {
-		return null;
-	}
 
 	@GetMapping("/busca/{texto}")
 	public ResponseEntity<List<MangaData>> getMangasPorTexto(@PathVariable String texto) {
@@ -39,12 +29,9 @@ public class MangaController {
 
 	@GetMapping("/trending")
 	public ResponseEntity<List<MangaData>> TrendingMangas() {
-		return null;
-	}
-
-	@GetMapping("/chapter/{manga}")
-	public ResponseEntity<List<MangaData>> getChapterByManga(@PathVariable String manga) {
-		return null;
+		
+		List<MangaData> mangasPopoulares = this.mangaService.pesquisaPorPopulares();
+		return ResponseEntity.ok(mangasPopoulares);
 	}
 
 }

@@ -29,4 +29,15 @@ public class MangaService {
 		return response.getData();
 	}
 
+	public List<MangaData> pesquisaPorPopulares(){
+		Mono<MangaResponse> monoManga = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/manga?sort=popularityRank")
+				.retrieve()
+				.bodyToMono(MangaResponse.class);
+		
+		MangaResponse response = monoManga.block();
+		
+		return response.getData();
+	}
 }
