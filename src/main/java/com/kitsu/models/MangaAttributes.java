@@ -7,7 +7,6 @@ public class MangaAttributes {
 	private Date createdAt;
 	private String slug;
 	private String synopsis;
-	private String description;
 	private String canonicalTitle;
 	private int popularityRank;
 	private int ratingRank;
