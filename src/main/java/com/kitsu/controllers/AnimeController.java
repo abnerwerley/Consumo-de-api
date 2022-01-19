@@ -27,14 +27,18 @@ public class AnimeController {
 		return ResponseEntity.ok(animesDoTexto);
 	}
 
+	/*
 	@GetMapping("/{id}")
 	public ResponseEntity<AnimeData> getById(@PathVariable String id) {
 		return null;
 	}
+	*/
 
 	@GetMapping("/listarTodos")
-	public AnimeData[] pegarTodos() {
-		return null;
+	public ResponseEntity<List<AnimeData>> pegarTodos() {
+		List<AnimeData> todosAnimes = this.animeService.pegarTodosAnimes();
+		
+		return ResponseEntity.ok(todosAnimes);
 	}
 
 	@GetMapping("/trending")
