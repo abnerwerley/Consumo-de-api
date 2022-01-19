@@ -28,7 +28,7 @@
 
  - Adicionei e configurei o swagger pra facilitar testes de quem quiser testar.<br>
 
-<h3>Heorku</h3>
+<h3>Heroku</h3>
 
 - Criei na raiz do projeto o arquivo system.properties e nele coloquei: java.runtime.version=11
 - Crei uma nova aplicação pra deploy no heroku com o nome "challengekitsu"
