@@ -28,7 +28,12 @@
 
  - Adicionei e configurei o swagger pra facilitar testes de quem quiser testar.<br>
 
-# Como fazer o código rodar:
+<h3>Heorku</h3>
+
+- Criei na raiz do projeto o arquivo system.properties e nele coloquei: java.runtime.version=11
+- Crei uma nova aplicação pra deploy no heroku com o nome "challengekitsu"
+- Conectei o Heroku à branch heroku do repositório, e deixei selecionado o deploy automático
+# Como Testar o código:
 
 Requisitos:
  - Ter um navegador
