@@ -40,4 +40,17 @@ public class EpisodesService {
 
 		return response.getEpisodes();
 	}
+	
+	public List<EpisodesData> pegarTodosEpisodes() {
+		System.out.println("Service");
+		Mono<EpisodesResponse> monoEpisodes = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/episodes")
+				.retrieve()
+				.bodyToMono(EpisodesResponse.class);
+
+		EpisodesResponse response = monoEpisodes.block();
+
+		return response.getEpisodes();
+	}
 }

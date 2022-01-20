@@ -30,4 +30,12 @@ public class EpisodesController {
 		return ResponseEntity.ok(episode);
 	}
 	
+	@GetMapping("/listarTodos")
+	public ResponseEntity<List<EpisodesData>> getTodosEpisodes(){
+		System.out.println("Chegou no controller");
+		List<EpisodesData> todosEpisodes = this.episodesService.pegarTodosEpisodes();
+		System.out.println(todosEpisodes);
+		return ResponseEntity.ok(todosEpisodes);
+	}
+	
 }
