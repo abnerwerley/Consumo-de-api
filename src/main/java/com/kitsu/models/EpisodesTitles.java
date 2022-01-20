@@ -1,6 +1,6 @@
 package com.kitsu.models;
 
-public class EpisodeTitles {
+public class EpisodesTitles {
 
 	public String en_jp;
 

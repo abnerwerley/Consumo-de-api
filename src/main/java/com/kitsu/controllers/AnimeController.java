@@ -27,6 +27,12 @@ public class AnimeController {
 		return ResponseEntity.ok(animesDoTexto);
 	}
 
+	@GetMapping("/{nome}")
+	public ResponseEntity<AnimeData> getAnimeEspecifico(@PathVariable String nome){
+		
+		AnimeData animeEspecifico = this.animeService.pesquisaAnimeEspecifico(nome);
+		return ResponseEntity.ok(animeEspecifico);
+	}
 	/*
 	@GetMapping("/{id}")
 	public ResponseEntity<AnimeData> getById(@PathVariable String id) {
@@ -35,14 +41,14 @@ public class AnimeController {
 	*/
 
 	@GetMapping("/listarTodos")
-	public ResponseEntity<List<AnimeData>> pegarTodosAnimes() {
+	public ResponseEntity<List<AnimeData>> getTodosAnimes() {
 		List<AnimeData> todosAnimes = this.animeService.pegarTodosAnimes();
 		
 		return ResponseEntity.ok(todosAnimes);
 	}
 
 	@GetMapping("/trending")
-	public ResponseEntity<List<AnimeData>> TrendingAnimes() {
+	public ResponseEntity<List<AnimeData>> getTrendingAnimes() {
 
 		List<AnimeData> animesPopulares = this.animeService.pesquisaPorRanking();
 

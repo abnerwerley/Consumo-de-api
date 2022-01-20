@@ -2,13 +2,13 @@ package com.kitsu.models;
 
 import java.util.Date;
 
-public class EpisodeAttributes {
+public class EpisodesAttributes {
 
 	public Date createdAt;
 	public Date updatedAt;
 	public String synopsis;
 	public String description;
-	public EpisodeTitles titles;
+	public EpisodesTitles titles;
 	public String canonicalTitle;
 	public int seasonNumber;
 	public int number;
@@ -48,11 +48,11 @@ public class EpisodeAttributes {
 		this.description = description;
 	}
 
-	public EpisodeTitles getTitles() {
+	public EpisodesTitles getTitles() {
 		return titles;
 	}
 
-	public void setTitles(EpisodeTitles titles) {
+	public void setTitles(EpisodesTitles titles) {
 		this.titles = titles;
 	}
 

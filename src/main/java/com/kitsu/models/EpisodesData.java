@@ -1,10 +1,10 @@
 package com.kitsu.models;
 
-public class EpisodeData {
+public class EpisodesData {
 
 	public String id;
 	public String type;
-	public EpisodeAttributes attributes;
+	public EpisodesAttributes attributes;
 
 	public String getId() {
 		return id;
@@ -22,11 +22,11 @@ public class EpisodeData {
 		this.type = type;
 	}
 
-	public EpisodeAttributes getAttributes() {
+	public EpisodesAttributes getAttributes() {
 		return attributes;
 	}
 
-	public void setAttributes(EpisodeAttributes attributes) {
+	public void setAttributes(EpisodesAttributes attributes) {
 		this.attributes = attributes;
 	}
 
