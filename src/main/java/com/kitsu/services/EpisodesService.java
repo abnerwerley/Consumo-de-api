@@ -29,7 +29,7 @@ public class EpisodesService {
 		return response.getEpidose();
 	}
 	
-	public List<EpisodesData> pesquisaEpisodioPorTexto(String id) {
+	public List<EpisodesData> pesquisaEpisodiosPorId(String id) {
 		Mono<EpisodesResponse> monoEpisodes = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/episodes/{id}", id)
