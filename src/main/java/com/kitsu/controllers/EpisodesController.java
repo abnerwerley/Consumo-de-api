@@ -18,14 +18,17 @@ public class EpisodesController {
 
 	private @Autowired EpisodesService episodesService;
 	
-	@GetMapping("/{id}")
-	public ResponseEntity<EpisodesData> getEpisodeById(@PathVariable String id){
+	/*
+	@GetMapping("/texto/{id}")
+	public ResponseEntity<EpisodesData> getEpisode(@PathVariable String id){
 		EpisodesData episode = this.episodesService.pesquisaEpisodio(id);
 		return ResponseEntity.ok(episode);
 	}
 	
-	@GetMapping("/texto/{id}")
-	public ResponseEntity<List<EpisodesData>> getEpisodesById(@PathVariable String id){
+	*/
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<List<EpisodesData>> getEpisodeById(@PathVariable String id){
 		List<EpisodesData> episode = this.episodesService.pesquisaEpisodiosPorId(id);
 		return ResponseEntity.ok(episode);
 	}
