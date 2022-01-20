@@ -54,6 +54,18 @@ public class AnimeService {
 		return response.getData();
 	}
 	
+	
+	public AnimeData pesquisaAnimeEspecifico(String anime) {
+		Mono<AnimeResponse> monoAnime = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/anime?filter[text]={anime}", anime)
+				.retrieve()
+				.bodyToMono(AnimeResponse.class);
+
+		AnimeResponse response = monoAnime.block();
+
+		return response.getData().get(0);
+	}
 	/*
 	public List<EpisodeData> pesquisaEpisodio(String id) {
 		Mono<AnimeResponse> monoAnime = this.webClientKitsu

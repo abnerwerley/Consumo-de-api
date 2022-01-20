@@ -26,6 +26,12 @@ public class MangaController {
 		
 		return ResponseEntity.ok(mangas);
 	}
+	
+	@GetMapping("/{nome}")
+	public ResponseEntity<MangaData> getMangaEspecifico(@PathVariable String nome){
+		MangaData mangaEspecifico = this.mangaService.pesquisaMangaEspecifico(nome);
+		return ResponseEntity.ok(mangaEspecifico);
+	}
 
 	@GetMapping("/trending")
 	public ResponseEntity<List<MangaData>> getTrendingMangas() {

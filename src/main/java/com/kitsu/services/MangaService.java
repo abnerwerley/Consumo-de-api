@@ -28,6 +28,18 @@ public class MangaService {
 		
 		return response.getData();
 	}
+	
+	public MangaData pesquisaMangaEspecifico(String manga) {
+		Mono<MangaResponse> monoManga = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/manga?filter[text]={manga}", manga)
+				.retrieve()
+				.bodyToMono(MangaResponse.class);
+
+		MangaResponse response = monoManga.block();
+
+		return response.getData().get(0);
+	}
 
 	public List<MangaData> pesquisaPorPopulares(){
 		Mono<MangaResponse> monoManga = this.webClientKitsu
