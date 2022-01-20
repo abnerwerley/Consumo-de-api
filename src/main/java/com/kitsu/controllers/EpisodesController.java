@@ -25,7 +25,7 @@ public class EpisodesController {
 	}
 	
 	@GetMapping("/texto/{id}")
-	public ResponseEntity<List<EpisodesData>> getEpisodeByTexto(@PathVariable String id){
+	public ResponseEntity<List<EpisodesData>> getEpisodesByTexto(@PathVariable String id){
 		List<EpisodesData> episode = this.episodesService.pesquisaEpisodioPorTexto(id);
 		return ResponseEntity.ok(episode);
 	}

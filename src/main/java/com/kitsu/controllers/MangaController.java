@@ -28,7 +28,7 @@ public class MangaController {
 	}
 
 	@GetMapping("/trending")
-	public ResponseEntity<List<MangaData>> TrendingMangas() {
+	public ResponseEntity<List<MangaData>> getTrendingMangas() {
 		
 		List<MangaData> mangasPopoulares = this.mangaService.pesquisaPorPopulares();
 		return ResponseEntity.ok(mangasPopoulares);
