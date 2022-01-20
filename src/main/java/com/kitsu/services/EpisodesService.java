@@ -26,7 +26,7 @@ public class EpisodesService {
 
 		EpisodesResponse response = monoEpisodes.block();
 
-		return response.getEpidose();
+		return response.getData().get(0);
 	}
 	
 	public List<EpisodesData> pesquisaEpisodiosPorId(String id) {
@@ -38,7 +38,7 @@ public class EpisodesService {
 
 		EpisodesResponse response = monoEpisodes.block();
 
-		return response.getEpisodes();
+		return response.getData();
 	}
 	
 	public List<EpisodesData> pegarTodosEpisodes() {
@@ -51,6 +51,6 @@ public class EpisodesService {
 
 		EpisodesResponse response = monoEpisodes.block();
 
-		return response.getEpisodes();
+		return response.getData();
 	}
 }

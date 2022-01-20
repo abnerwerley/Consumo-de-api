@@ -28,16 +28,14 @@ public class EpisodesController {
 	*/
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<List<EpisodesData>> getEpisodeById(@PathVariable String id){
-		List<EpisodesData> episode = this.episodesService.pesquisaEpisodiosPorId(id);
+	public ResponseEntity<EpisodesData> getEpisodeById(@PathVariable String id){
+		EpisodesData episode = this.episodesService.pesquisaEpisodio(id);
 		return ResponseEntity.ok(episode);
 	}
 	
 	@GetMapping("/listarTodos")
 	public ResponseEntity<List<EpisodesData>> getTodosEpisodes(){
-		System.out.println("Chegou no controller");
 		List<EpisodesData> todosEpisodes = this.episodesService.pegarTodosEpisodes();
-		System.out.println(todosEpisodes);
 		return ResponseEntity.ok(todosEpisodes);
 	}
 	
