@@ -13,13 +13,13 @@
 
  <h3> WebClient</h3>
  
-  - Defini o header e a base url na classe main do projeto<br>
-  - injetei ela no AnimeService com o endereço complementar da API externa, montei a chamada pro primeiro endpoint pra teste, e criei ele (/anime/busca/{texto}.<br>
+  - Defini o header e a base url na classe Client<br>
+  - injetei ela no AnimeService com o endereço complementar da API externa, montei a chamada pro primeiro endpoint pra teste, e criei ele (/anime/busca/{texto}).<br>
   - Testei com o postman, e assm fui criando os demais endpoints do Anime e testando.<br>
 
 <h3>Manga</h3>
 
- -Fiz a conversão pra fazer a model do Mangá.<br>
+ - Fiz a conversão pra fazer a model do Mangá.<br>
  - Desmembrei as Inner Classes em classes normais e gerei seus getters e setters.<br>
  - Criei a MangaResponse, que vai conter a lista de Mangas, e gerei seu getter e setter.<br>
  - Criei as chamadas no MangaService e as usei no controller.<br>
@@ -30,17 +30,14 @@
 
 <h3>Heroku</h3>
 
-- Criei na raiz do projeto o arquivo system.properties e nele coloquei: java.runtime.version=11
+- Criei na raiz do projeto o arquivo system.properties contendo: java.runtime.version=11
 - Crei uma nova aplicação pra deploy no heroku com o nome "challengekitsu"
 - Conectei o Heroku à branch heroku do repositório, e deixei selecionado o deploy automático
 # Como Testar o código:
-
-Requisitos:
- - Ter um navegador
 
 Passos
  - Entrar em https://challengekitsu.herokuapp.com/swagger-ui/#/ pelo seu navegador
  - Testar os endpoints e passar os parâmetros quando necessário.
     
-# Prótotipo de banco de dados:
+# Protótipo de banco de dados:
 https://drive.google.com/drive/folders/1VW0icPsb432XV0bmfn1yi-JomjTtuMQi?usp=sharing
