@@ -13,8 +13,8 @@
 
  <h3> WebClient</h3>
  
-  - Defini o header e a base url na classe main do projeto<br>
-  - injetei ela no AnimeService com o endereço complementar da API externa, montei a chamada pro primeiro endpoint pra teste, e criei ele (/anime/busca/{texto}.<br>
+  - Defini o header e a base url na classe Client<br>
+  - injetei ela no AnimeService com o endereço complementar da API externa, montei a chamada pro primeiro endpoint pra teste, e criei ele (/anime/busca/{texto}).<br>
   - Testei com o postman, e assm fui criando os demais endpoints do Anime e testando.<br>
 
 <h3>Manga</h3>
@@ -30,7 +30,7 @@
 
 <h3>Heroku</h3>
 
-- Criei na raiz do projeto o arquivo system.properties e nele coloquei: java.runtime.version=11
+- Criei na raiz do projeto o arquivo system.properties contendo: java.runtime.version=11
 - Crei uma nova aplicação pra deploy no heroku com o nome "challengekitsu"
 - Conectei o Heroku à branch heroku do repositório, e deixei selecionado o deploy automático
 # Como Testar o código:
