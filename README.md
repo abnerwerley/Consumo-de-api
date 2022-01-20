@@ -33,6 +33,14 @@
 - Criei na raiz do projeto o arquivo system.properties contendo: java.runtime.version=11
 - Crei uma nova aplicação pra deploy no heroku com o nome "challengekitsu"
 - Conectei o Heroku à branch heroku do repositório, e deixei selecionado o deploy automático
+
+<h3>Episodes</h3>
+
+- Fiz a conversão de Episodes e destrinchei ele
+- Criei o EpisodesResponse para ser usado nos serviços
+- Criei os serviços de pesquisa por id e lista todos os episódios
+- Usei os serviços no Controller, testei, mas no momento não está funcionando.
+
 # Como Testar o código:
 
 Passos
