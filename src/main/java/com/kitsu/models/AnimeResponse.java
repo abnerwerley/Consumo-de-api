@@ -6,7 +6,7 @@ public class AnimeResponse{
 
 	private List<AnimeData> data;
 	
-	private List<EpisodeData> episode;
+	private List<EpisodesData> episode;
 
 	public List<AnimeData> getData() {
 		return data;
@@ -16,11 +16,11 @@ public class AnimeResponse{
 		this.data = data;
 	}
 
-	public List<EpisodeData> getEpisode() {
+	public List<EpisodesData> getEpisode() {
 		return episode;
 	}
 
-	public void setEpisode(List<EpisodeData> episode) {
+	public void setEpisode(List<EpisodesData> episode) {
 		this.episode = episode;
 	}
 
