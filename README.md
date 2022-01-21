@@ -43,7 +43,6 @@
 
 # Como Testar o código:
 
-Passos
  - Entrar em https://challengekitsu.herokuapp.com/swagger-ui/#/ pelo seu navegador
  - Testar os endpoints e passar os parâmetros quando necessário.
     
