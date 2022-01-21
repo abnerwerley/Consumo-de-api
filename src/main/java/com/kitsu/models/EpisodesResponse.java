@@ -4,16 +4,17 @@ import java.util.List;
 
 public class EpisodesResponse {
 
-	List<EpisodesData> episodes;
+	List<EpisodesData> data;
 
 	EpisodesData episode ;
+
 	
-	public List<EpisodesData> getEpisodes() {
-		return episodes;
+	public List<EpisodesData> getData() {
+		return data;
 	}
 
-	public void setEpisodes(List<EpisodesData> episodes) {
-		this.episodes = episodes;
+	public void setData(List<EpisodesData> data) {
+		this.data = data;
 	}
 
 	public EpisodesData getEpidose() {
