@@ -39,7 +39,7 @@
 - Fiz a conversão de Episodes e destrinchei ele
 - Criei o EpisodesResponse para ser usado nos serviços
 - Criei os serviços de pesquisa por id e lista todos os episódios
-- Usei os serviços no Controller, testei, mas no momento não está funcionando.
+- Usei os serviços no Controller, testei, mas até o momento só está funcionando o listarTodosEpisódios.
 
 # Como Testar o código:
 
