@@ -15,7 +15,7 @@
  
   - Defini o header e a base url na classe Client<br>
   - injetei ela no AnimeService com o endereço complementar da API externa, montei a chamada pro primeiro endpoint pra teste, e criei ele (/anime/busca/{texto}).<br>
-  - Testei com o postman, e assm fui criando os demais endpoints do Anime e testando.<br>
+  - Testei com o postman, e assim fui criando os demais endpoints do Anime e testando.<br>
 
 <h3>Manga</h3>
 
@@ -34,16 +34,23 @@
 - Crei uma nova aplicação pra deploy no heroku com o nome "challengekitsu"
 - Conectei o Heroku à branch heroku do repositório, e deixei selecionado o deploy automático
 
+<h3>Branches</h3>
+
+  - Main -> Usei para a criação do projeto, depois disso comecei a usar a DEV.
+  - Dev -> Branch de desenvolvimento.
+  - Client -> Usei pra testar oo WebClient, quando estava funcionando mandei pra DEV.
+  - Swagger -> Usei para colocar o swagger no projeto, quando funcionando, abri o pull request pra branch DEV.
+  - Heroku -> Branch do deploy.
+
 <h3>Episodes</h3>
 
 - Fiz a conversão de Episodes e destrinchei ele
 - Criei o EpisodesResponse para ser usado nos serviços
 - Criei os serviços de pesquisa por id e lista todos os episódios
-- Usei os serviços no Controller, testei, mas no momento não está funcionando.
+- Usei os serviços no Controller, testei, mas até o momento só está funcionando o listarTodosEpisódios.
 
 # Como Testar o código:
 
-Passos
  - Entrar em https://challengekitsu.herokuapp.com/swagger-ui/#/ pelo seu navegador
  - Testar os endpoints e passar os parâmetros quando necessário.
     
