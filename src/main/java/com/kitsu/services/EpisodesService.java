@@ -9,6 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.kitsu.models.EpisodesData;
 import com.kitsu.models.EpisodesResponse;
+import com.kitsu.models.EpisodesUniqueResponse;
 
 import reactor.core.publisher.Mono;
 
@@ -18,15 +19,15 @@ public class EpisodesService {
 	private @Autowired WebClient webClientKitsu;
 	
 	public EpisodesData pesquisaEpisodio(String id) {
-		Mono<EpisodesResponse> monoEpisodes = this.webClientKitsu
+		Mono<EpisodesUniqueResponse> monoEpisodes = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/episodes/{id}", id)
 				.retrieve()
-				.bodyToMono(EpisodesResponse.class);
+				.bodyToMono(EpisodesUniqueResponse.class);
 
-		EpisodesResponse response = monoEpisodes.block();
+		EpisodesUniqueResponse response = monoEpisodes.block();
 
-		return response.getData().get(0);
+		return response.getData();
 	}
 	
 	public List<EpisodesData> pesquisaEpisodiosPorId(String id) {
@@ -42,7 +43,6 @@ public class EpisodesService {
 	}
 	
 	public List<EpisodesData> pegarTodosEpisodes() {
-		System.out.println("Service");
 		Mono<EpisodesResponse> monoEpisodes = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/episodes")

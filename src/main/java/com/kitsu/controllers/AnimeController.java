@@ -27,10 +27,10 @@ public class AnimeController {
 		return ResponseEntity.ok(animesDoTexto);
 	}
 
-	@GetMapping("/{nome}")
-	public ResponseEntity<AnimeData> getAnimeEspecifico(@PathVariable String nome){
+	@GetMapping("/{anime}")
+	public ResponseEntity<AnimeData> getAnimeEspecifico(@PathVariable String anime){
 		
-		AnimeData animeEspecifico = this.animeService.pesquisaAnimeEspecifico(nome);
+		AnimeData animeEspecifico = this.animeService.pesquisaAnimeEspecifico(anime);
 		return ResponseEntity.ok(animeEspecifico);
 	}
 	/*

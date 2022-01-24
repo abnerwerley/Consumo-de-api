@@ -30,7 +30,9 @@ public class EpisodesController {
 	@GetMapping("/{id}")
 	public ResponseEntity<EpisodesData> getEpisodeById(@PathVariable String id){
 		EpisodesData episode = this.episodesService.pesquisaEpisodio(id);
-		return ResponseEntity.ok(episode);
+	
+			return ResponseEntity.status(200).body(episode);
+		
 	}
 	
 	@GetMapping("/listarTodos")
