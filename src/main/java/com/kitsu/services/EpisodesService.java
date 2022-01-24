@@ -1,6 +1,7 @@
 package com.kitsu.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -9,6 +10,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.kitsu.models.EpisodesData;
 import com.kitsu.models.EpisodesResponse;
+import com.kitsu.models.EpisodesUniqueResponse;
 
 import reactor.core.publisher.Mono;
 
@@ -17,16 +19,16 @@ public class EpisodesService {
 
 	private @Autowired WebClient webClientKitsu;
 	
-	public EpisodesData pesquisaEpisodio(String id) {
-		Mono<EpisodesResponse> monoEpisodes = this.webClientKitsu
+	public Optional<EpisodesData> pesquisaEpisodio(String id) {
+		Mono<EpisodesUniqueResponse> monoEpisodes = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/episodes/{id}", id)
 				.retrieve()
-				.bodyToMono(EpisodesResponse.class);
+				.bodyToMono(EpisodesUniqueResponse.class);
 
-		EpisodesResponse response = monoEpisodes.block();
+		EpisodesUniqueResponse response = monoEpisodes.block();
 
-		return response.getData().get(0);
+		return Optional.of(response.getData());
 	}
 	
 	public List<EpisodesData> pesquisaEpisodiosPorId(String id) {

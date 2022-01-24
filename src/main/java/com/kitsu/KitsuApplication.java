@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class KitsuApplication {
 
 	@GetMapping
-	public ModelAndView sawggerUi() {
+	public ModelAndView swggerUi() {
 		return new ModelAndView("redirect/swagger-ui/");
 	}
 	
