@@ -1,7 +1,6 @@
 package com.kitsu.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,14 +28,11 @@ public class EpisodesController {
 	*/
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<EpisodesData>> getEpisodeById(@PathVariable String id){
-		Optional<EpisodesData> episode = this.episodesService.pesquisaEpisodio(id);
-		
-		if(episode.isPresent()) {
+	public ResponseEntity<EpisodesData> getEpisodeById(@PathVariable String id){
+		EpisodesData episode = this.episodesService.pesquisaEpisodio(id);
+	
 			return ResponseEntity.status(200).body(episode);
-		} else {
-			return ResponseEntity.status(404).build();
-		}
+		
 	}
 	
 	@GetMapping("/listarTodos")

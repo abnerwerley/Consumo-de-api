@@ -1,7 +1,6 @@
 package com.kitsu.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -19,7 +18,7 @@ public class EpisodesService {
 
 	private @Autowired WebClient webClientKitsu;
 	
-	public Optional<EpisodesData> pesquisaEpisodio(String id) {
+	public EpisodesData pesquisaEpisodio(String id) {
 		Mono<EpisodesUniqueResponse> monoEpisodes = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/episodes/{id}", id)
@@ -28,7 +27,7 @@ public class EpisodesService {
 
 		EpisodesUniqueResponse response = monoEpisodes.block();
 
-		return Optional.of(response.getData());
+		return response.getData();
 	}
 	
 	public List<EpisodesData> pesquisaEpisodiosPorId(String id) {
@@ -44,7 +43,6 @@ public class EpisodesService {
 	}
 	
 	public List<EpisodesData> pegarTodosEpisodes() {
-		System.out.println("Service");
 		Mono<EpisodesResponse> monoEpisodes = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/episodes")
