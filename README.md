@@ -15,7 +15,7 @@
  
   - Defini o header e a base url na classe Client<br>
   - injetei ela no AnimeService com o endereço complementar da API externa, montei a chamada pro primeiro endpoint pra teste, e criei ele (/anime/busca/{texto}).<br>
-  - Testei com o postman, e assm fui criando os demais endpoints do Anime e testando.<br>
+  - Testei com o postman, e assim fui criando os demais endpoints do Anime e testando.<br>
 
 <h3>Manga</h3>
 
