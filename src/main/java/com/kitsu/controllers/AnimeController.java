@@ -22,7 +22,7 @@ public class AnimeController {
 	@GetMapping("/busca/{texto}")
 	public ResponseEntity<List<AnimeData>> getAnimesPorTexto(@PathVariable String texto) {
 
-		List<AnimeData> animesDoTexto = this.animeService.pesquisaPorFiltro(texto);
+		List<AnimeData> animesDoTexto = this.animeService.pesquisaPorTexto(texto);
 
 		return ResponseEntity.ok(animesDoTexto);
 	}
@@ -55,6 +55,13 @@ public class AnimeController {
 		return ResponseEntity.ok(animesPopulares);
 	}
 
+	@GetMapping("/categoria/{category}")
+	public ResponseEntity<List<AnimeData>> getAnimesPorCategoria(@PathVariable String category) {
+
+		List<AnimeData> animes = this.animeService.pesquisaAnimePorCategory(category);
+
+		return ResponseEntity.ok(animes);
+	}
 	/*
 	@GetMapping("/episodes/{id}")
 	public ResponseEntity<List<EpisodeData>> getEpisodePorAnime(@PathVariable String id) {

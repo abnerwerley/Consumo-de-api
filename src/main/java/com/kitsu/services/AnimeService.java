@@ -18,7 +18,7 @@ public class AnimeService {
 
 	private @Autowired WebClient webClientKitsu;
 	
-	public List<AnimeData> pesquisaPorFiltro(String texto) {
+	public List<AnimeData> pesquisaPorTexto(String texto) {
 		Mono<AnimeResponse> monoAnime = this.webClientKitsu
 				.method(HttpMethod.GET)
 				.uri("/anime?filter[text]={texto}", texto)
@@ -66,6 +66,19 @@ public class AnimeService {
 
 		return response.getData().get(0);
 	}
+	
+	public List<AnimeData> pesquisaAnimePorCategory(String category) {
+		Mono<AnimeResponse> monoAnime = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/anime?filter[categories]={category}", category)
+				.retrieve()
+				.bodyToMono(AnimeResponse.class);
+
+		AnimeResponse response = monoAnime.block();
+
+		return response.getData();
+	}
+	
 	/*
 	public List<EpisodeData> pesquisaEpisodio(String id) {
 		Mono<AnimeResponse> monoAnime = this.webClientKitsu

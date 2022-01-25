@@ -41,6 +41,18 @@ public class MangaService {
 		return response.getData().get(0);
 	}
 
+	public List<MangaData> pesquiaMangaPorCategory(String category){
+		Mono<MangaResponse> monoManga = this.webClientKitsu
+				.method(HttpMethod.GET)
+				.uri("/manga?filter[categories]={category}", category)
+				.retrieve()
+				.bodyToMono(MangaResponse.class);
+		
+		MangaResponse response = monoManga.block();
+		
+		return response.getData();
+	}
+	
 	public List<MangaData> pesquisaPorPopulares(){
 		Mono<MangaResponse> monoManga = this.webClientKitsu
 				.method(HttpMethod.GET)
@@ -52,4 +64,5 @@ public class MangaService {
 		
 		return response.getData();
 	}
+	
 }
