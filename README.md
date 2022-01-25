@@ -41,6 +41,14 @@
 - Criei os serviços de pesquisa por id e lista todos os episódios
 - Usei os serviços no Controller, testei, mas até o momento só está funcionando o listarTodosEpisódios.
 
+<h3>Branches</h3>
+
+  - Main -> Usei para a criação do projeto, depois disso comecei a usar a DEV.
+  - Dev -> Branch de desenvolvimento.
+  - Client -> Usei pra testar oo WebClient, quando estava funcionando mandei pra DEV.
+  - Swagger -> Usei para colocar o swagger no projeto, quando funcionando, abri o pull request pra branch DEV.
+  - Heroku -> Branch do deploy.
+
 # Como Testar o código:
 
  - Entrar em https://challengekitsu.herokuapp.com/swagger-ui/#/ pelo seu navegador
