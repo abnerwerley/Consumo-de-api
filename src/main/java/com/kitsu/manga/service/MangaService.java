@@ -1,4 +1,4 @@
-package com.kitsu.manga;
+package com.kitsu.manga.service;
 
 import java.util.List;
 

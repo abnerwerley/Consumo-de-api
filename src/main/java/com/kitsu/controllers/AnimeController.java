@@ -1,13 +1,10 @@
 package com.kitsu.controllers;
 
-import com.kitsu.anime.AnimeService;
+import com.kitsu.anime.servicce.AnimeService;
 import com.kitsu.anime.model.AnimeData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,44 +12,35 @@ import java.util.List;
 @RequestMapping("/anime")
 public class AnimeController {
 
-    private @Autowired AnimeService animeService;
+    private @Autowired AnimeService service;
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/busca/{texto}")
-    public ResponseEntity<List<AnimeData>> getAnimesPorTexto(@PathVariable String texto) {
-
-        List<AnimeData> animesDoTexto = this.animeService.pesquisaPorTexto(texto);
-
-        return ResponseEntity.ok(animesDoTexto);
+    List<AnimeData> getAnimesPorTexto(@PathVariable String texto) {
+        return service.pesquisaPorTexto(texto);
     }
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/{anime}")
-    public ResponseEntity<AnimeData> getAnimeEspecifico(@PathVariable String anime) {
-
-        AnimeData animeEspecifico = this.animeService.pesquisaAnimeEspecifico(anime);
-        return ResponseEntity.ok(animeEspecifico);
+    AnimeData getAnimeEspecifico(@PathVariable String anime) {
+        return service.pesquisaAnimeEspecifico(anime);
     }
 
     @GetMapping("/listarTodos")
-    public ResponseEntity<List<AnimeData>> getTodosAnimes() {
-        List<AnimeData> todosAnimes = this.animeService.pegarTodosAnimes();
-
-        return ResponseEntity.ok(todosAnimes);
+    List<AnimeData> getTodosAnimes() {
+        return service.pegarTodosAnimes();
     }
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/trending")
-    public ResponseEntity<List<AnimeData>> getTrendingAnimes() {
-
-        List<AnimeData> animesPopulares = this.animeService.pesquisaPorRanking();
-
-        return ResponseEntity.ok(animesPopulares);
+    List<AnimeData> getTrendingAnimes() {
+        return service.pesquisaPorRanking();
     }
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/categoria/{category}")
-    public ResponseEntity<List<AnimeData>> getAnimesPorCategoria(@PathVariable String category) {
-
-        List<AnimeData> animes = this.animeService.pesquisaAnimePorCategory(category);
-
-        return ResponseEntity.ok(animes);
+    List<AnimeData> getAnimesPorCategoria(@PathVariable String category) {
+        return service.pesquisaAnimePorCategory(category);
     }
 
 }

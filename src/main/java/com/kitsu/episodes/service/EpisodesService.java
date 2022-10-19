@@ -1,4 +1,4 @@
-package com.kitsu.episodes;
+package com.kitsu.episodes.service;
 
 import com.kitsu.episodes.model.EpisodesData;
 import com.kitsu.episodes.model.EpisodesResponse;

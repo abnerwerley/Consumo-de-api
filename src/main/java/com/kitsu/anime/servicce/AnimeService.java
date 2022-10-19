@@ -1,4 +1,4 @@
-package com.kitsu.anime;
+package com.kitsu.anime.servicce;
 
 import com.kitsu.anime.model.AnimeData;
 import com.kitsu.anime.model.AnimeResponse;

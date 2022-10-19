@@ -1,13 +1,10 @@
 package com.kitsu.controllers;
 
-import com.kitsu.episodes.EpisodesService;
+import com.kitsu.episodes.service.EpisodesService;
 import com.kitsu.episodes.model.EpisodesData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,20 +12,18 @@ import java.util.List;
 @RequestMapping("/episodes")
 public class EpisodesController {
 
-    private @Autowired EpisodesService episodesService;
+    private @Autowired EpisodesService service;
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/{id}")
-    public ResponseEntity<EpisodesData> getEpisodeById(@PathVariable String id) {
-        EpisodesData episode = this.episodesService.pesquisaEpisodio(id);
-
-        return ResponseEntity.status(200).body(episode);
-
+    EpisodesData getEpisodeById(@PathVariable String id) {
+        return service.pesquisaEpisodio(id);
     }
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/listarTodos")
-    public ResponseEntity<List<EpisodesData>> getTodosEpisodes() {
-        List<EpisodesData> todosEpisodes = this.episodesService.pegarTodosEpisodes();
-        return ResponseEntity.ok(todosEpisodes);
+    List<EpisodesData> getTodosEpisodes() {
+        return service.pegarTodosEpisodes();
     }
 
 }

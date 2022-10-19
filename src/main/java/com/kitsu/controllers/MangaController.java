@@ -1,13 +1,10 @@
 package com.kitsu.controllers;
 
-import com.kitsu.manga.MangaService;
+import com.kitsu.manga.service.MangaService;
 import com.kitsu.manga.model.MangaData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,33 +13,30 @@ import java.util.List;
 public class MangaController {
 
     @Autowired
-    private MangaService mangaService;
+    private MangaService service;
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/busca/{texto}")
-    public ResponseEntity<List<MangaData>> getMangasPorTexto(@PathVariable String texto) {
-
-        List<MangaData> mangas = this.mangaService.pesquisaPorTexto(texto);
-
-        return ResponseEntity.ok(mangas);
+    List<MangaData> getMangasPorTexto(@PathVariable String texto) {
+        return service.pesquisaPorTexto(texto);
     }
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/{manga}")
-    public ResponseEntity<MangaData> getMangaEspecifico(@PathVariable String manga) {
-        MangaData mangaEspecifico = this.mangaService.pesquisaMangaEspecifico(manga);
-        return ResponseEntity.ok(mangaEspecifico);
+    MangaData getMangaEspecifico(@PathVariable String manga) {
+        return service.pesquisaMangaEspecifico(manga);
     }
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/categoria/{category}")
-    public ResponseEntity<List<MangaData>> getMangaPorCategory(@PathVariable String category) {
-        List<MangaData> mangasDaCategory = this.mangaService.pesquiaMangaPorCategory(category);
-        return ResponseEntity.ok(mangasDaCategory);
+    List<MangaData> getMangaPorCategory(@PathVariable String category) {
+        return service.pesquiaMangaPorCategory(category);
     }
 
+    @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/trending")
-    public ResponseEntity<List<MangaData>> getTrendingMangas() {
-
-        List<MangaData> mangasPopoulares = this.mangaService.pesquisaPorPopulares();
-        return ResponseEntity.ok(mangasPopoulares);
+    List<MangaData> getTrendingMangas() {
+        return service.pesquisaPorPopulares();
     }
 
 }
