@@ -38,20 +38,4 @@ public class SwaggerConfig {
 	private static Contact contact() {
 		return new Contact("Abner Werley Silva", "https://github.com/abnerwerley/desafio-kitsu-backend.git", "abnerwerley77@gmail.com");
 	}
-
-	@SuppressWarnings("unused")
-	private static List<Response> responseMessage() {
-		return new ArrayList<Response>() {
-			private static final long serialVersionUID = 1L;
-			{
-				add(new ResponseBuilder().code("200").description("Sucesso.").build());
-				add(new ResponseBuilder().code("201").description("Criado.").build());
-				add(new ResponseBuilder().code("400").description("Erro na requisição.").build());
-				add(new ResponseBuilder().code("401").description("Não Autorizado.").build());
-				add(new ResponseBuilder().code("403").description("Proibido.").build());
-				add(new ResponseBuilder().code("404").description("Não Encontrado.").build());
-				add(new ResponseBuilder().code("500").description("Erro interno de servidor.").build());
-			}
-		};
-	}
 }

@@ -1,4 +1,4 @@
-package com.kitsu.services;
+package com.kitsu.manga;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.kitsu.models.MangaData;
-import com.kitsu.models.MangaResponse;
+import com.kitsu.manga.model.MangaData;
+import com.kitsu.manga.model.MangaResponse;
 
 import reactor.core.publisher.Mono;
 
