@@ -1,6 +1,6 @@
 package com.kitsu.controllers;
 
-import com.kitsu.anime.servicce.AnimeService;
+import com.kitsu.anime.service.AnimeService;
 import com.kitsu.anime.model.AnimeData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

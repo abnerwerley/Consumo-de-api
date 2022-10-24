@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 public class EpisodesTitles {
 
-    public String en_jp;
+    private String en_jp;
 
 }

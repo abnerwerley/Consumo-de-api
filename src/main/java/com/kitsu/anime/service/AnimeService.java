@@ -1,4 +1,4 @@
-package com.kitsu.anime.servicce;
+package com.kitsu.anime.service;
 
 import com.kitsu.anime.model.AnimeData;
 import com.kitsu.anime.model.AnimeResponse;
@@ -75,20 +75,5 @@ public class AnimeService {
 
         return response.getData();
     }
-	
-	/*
-	public List<EpisodeData> pesquisaEpisodio(String id) {
-		Mono<AnimeResponse> monoAnime = this.webClientKitsu
-				.method(HttpMethod.GET)
-				.uri("/episodes/{id}", id)
-				.retrieve()
-				.bodyToMono(AnimeResponse.class);
-
-		AnimeResponse response = monoAnime.block();
-
-		return response.getEpisode();
-	}
-	*/
-
 }
 

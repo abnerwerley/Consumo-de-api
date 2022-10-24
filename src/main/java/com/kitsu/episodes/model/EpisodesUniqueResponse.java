@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class EpisodesUniqueResponse {
 
-    EpisodesData data;
+    private EpisodesData data;
 
     public EpisodesData getData() {
         return data;

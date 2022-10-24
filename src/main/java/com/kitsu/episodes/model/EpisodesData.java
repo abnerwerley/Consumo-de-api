@@ -7,8 +7,8 @@ import lombok.Setter;
 @Setter
 public class EpisodesData {
 
-    public String id;
-    public String type;
-    public EpisodesAttributes attributes;
+    private String id;
+    private String type;
+    private EpisodesAttributes attributes;
 
 }

@@ -9,7 +9,7 @@ import java.util.List;
 @Setter
 public class EpisodesResponse {
 
-    List<EpisodesData> data;
+    private List<EpisodesData> data;
 
     public List<EpisodesData> getData() {
         return data;
