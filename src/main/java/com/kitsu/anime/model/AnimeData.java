@@ -9,8 +9,7 @@ public class AnimeData {
 
     private String id;
     private String type;
-    private AnimeLinks links;
     private AnimeAttributes attributes;
-    private AnimeRelationships relationships;
+    private AnimeEpisodes episodes;
 
 }

@@ -16,27 +16,27 @@ public class MangaController {
     private MangaService service;
 
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping("/busca/{texto}")
-    List<MangaData> getMangasPorTexto(@PathVariable String texto) {
-        return service.pesquisaPorTexto(texto);
+    @GetMapping("/get/{text}")
+    List<MangaData> getMangasByText(@PathVariable String text) {
+        return service.getMangasByText(text);
     }
 
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/{manga}")
-    MangaData getMangaEspecifico(@PathVariable String manga) {
-        return service.pesquisaMangaEspecifico(manga);
+    MangaData getSpecificManga(@PathVariable String manga) {
+        return service.getSpecificManga(manga);
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping("/categoria/{category}")
-    List<MangaData> getMangaPorCategory(@PathVariable String category) {
-        return service.pesquiaMangaPorCategory(category);
+    @GetMapping("/category/{category}")
+    List<MangaData> getMangasByCategory(@PathVariable String category) {
+        return service.getMangasByCategory(category);
     }
 
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/trending")
     List<MangaData> getTrendingMangas() {
-        return service.pesquisaPorPopulares();
+        return service.getTrendingMangas();
     }
 
 }

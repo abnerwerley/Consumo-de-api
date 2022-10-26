@@ -17,13 +17,13 @@ public class EpisodesController {
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/{id}")
     EpisodesData getEpisodeById(@PathVariable String id) {
-        return service.pesquisaEpisodio(id);
+        return service.getEpisodeById(id);
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping("/listarTodos")
-    List<EpisodesData> getTodosEpisodes() {
-        return service.pegarTodosEpisodes();
+    @GetMapping("/listAll")
+    List<EpisodesData> getAllEpisodes() {
+        return service.getAllEpisodes();
     }
 
 }
